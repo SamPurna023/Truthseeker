@@ -1,0 +1,201 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 220 20% 16%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 16%;
+
+    --primary: 358 72% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 97%;
+    --secondary-foreground: 220 20% 16%;
+
+    --muted: 220 20% 97%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 220 20% 97%;
+    --accent-foreground: 220 20% 16%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 20% 92%;
+    --input: 220 20% 92%;
+    --ring: 358 72% 49%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 20% 16%;
+    --sidebar-primary: 358 72% 49%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 97%;
+    --sidebar-accent-foreground: 220 20% 16%;
+    --sidebar-border: 220 20% 92%;
+    --sidebar-ring: 358 72% 49%;
+  }
+
+  .dark {
+    --background: 220 20% 10%;
+    --foreground: 220 20% 96%;
+
+    --card: 220 20% 13%;
+    --card-foreground: 220 20% 96%;
+
+    --popover: 220 20% 13%;
+    --popover-foreground: 220 20% 96%;
+
+    --primary: 358 72% 49%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 16%;
+    --secondary-foreground: 220 20% 96%;
+
+    --muted: 220 20% 16%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 220 20% 16%;
+    --accent-foreground: 220 20% 96%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 220 20% 96%;
+
+    --border: 220 20% 16%;
+    --input: 220 20% 16%;
+    --ring: 358 72% 49%;
+
+    --sidebar-background: 220 20% 13%;
+    --sidebar-foreground: 220 20% 96%;
+    --sidebar-primary: 358 72% 49%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 20% 16%;
+    --sidebar-accent-foreground: 220 20% 96%;
+    --sidebar-border: 220 20% 16%;
+    --sidebar-ring: 358 72% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv03";
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm dark:bg-black/40 border border-white/10 shadow-smooth;
+  }
+  
+  .neo-blur {
+    @apply backdrop-blur-lg bg-white/60 dark:bg-black/60 border border-white/20 dark:border-white/10 shadow-card;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .hover-scale {
+    @apply transition-transform duration-300 ease-out hover:scale-[1.02];
+  }
+  
+  .fade-mask {
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+  }
+  
+  .link-underline {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-current after:transition-transform after:duration-300 hover:after:origin-bottom-left hover:after:scale-x-100;
+  }
+
+  /* For Reddit-style voting */
+  .vote-button {
+    @apply flex items-center justify-center transition-colors duration-200 p-1 rounded-full;
+  }
+  
+  .vote-button.upvote.active {
+    @apply text-vote-up;
+  }
+  
+  .vote-button.downvote.active {
+    @apply text-vote-down;
+  }
+
+  /* Styling for the case status */
+  .status-badge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+  
+  .status-new {
+    @apply bg-status-new/10 text-status-new;
+  }
+  
+  .status-investigating {
+    @apply bg-status-investigating/10 text-status-investigating;
+  }
+  
+  .status-in-progress {
+    @apply bg-status-inProgress/10 text-status-inProgress;
+  }
+  
+  .status-resolved {
+    @apply bg-status-resolved/10 text-status-resolved;
+  }
+  
+  .status-closed {
+    @apply bg-status-closed/10 text-status-closed;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Smooth page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 300ms, transform 300ms;
+}
