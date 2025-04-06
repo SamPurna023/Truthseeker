@@ -37,13 +37,13 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-balance">
-              Speak truth to power, 
-              <span className="text-primary"> safely & anonymously</span>
+               Raise your voice safely. 
+              <span className="text-primary"> Stay anonymous.</span>
             </h1>
             
             <p className="text-muted-foreground text-lg md:text-xl max-w-[700px] mx-auto text-balance">
-              TruthSeeker Haven provides a secure platform for whistleblowers to report 
-              corruption and track the progress of investigations while maintaining anonymity.
+            TruthSeeker is a secure, anonymous platform for reporting corruption, 
+            powered by AI to detect fraud and fast-track investigations.
             </p>
           </AnimatedDiv>
           

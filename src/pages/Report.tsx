@@ -8,6 +8,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ReportForm from '@/components/ReportForm';
 import { Separator } from '@/components/ui/separator';
+import AIFraudAnalyzer from './AIFraudAnalyzer';
 
 const Report = () => {
   const securityFeatures = [
@@ -50,6 +51,8 @@ const Report = () => {
                 <Shield className="h-4 w-4 mr-1.5 text-primary" />
                 <span>Secure & Confidential</span>
               </div>
+
+              <AIFraudAnalyzer />
               
               <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
                 Report Corruption Securely

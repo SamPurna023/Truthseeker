@@ -121,7 +121,7 @@ const Footer = () => {
           
           <div className="flex items-center space-x-4">
             <span className="text-xs text-muted-foreground">
-              © {new Date().getFullYear()} TruthSeeker Haven. All rights reserved.
+              © {new Date().getFullYear()} TruthSeeker. All rights reserved.
             </span>
             
             <Button

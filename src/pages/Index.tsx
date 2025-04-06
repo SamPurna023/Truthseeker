@@ -287,7 +287,7 @@ const Index = () => {
                 Our Impact
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                TruthSeeker Haven has helped whistleblowers around the world make a difference
+                TruthSeeker has helped whistleblowers around the world make a difference
               </p>
             </div>
             
